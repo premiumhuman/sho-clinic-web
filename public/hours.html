@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>診療時間｜新宿御苑しょうクリニック</title>
+    <link rel="icon" href="./favicon.svg">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./guide.css">
+    <script src="./site.js" defer></script>
+  </head>
+  <body class="guide-page">
+    <a class="skip-link" href="#content">本文へ移動</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="新宿御苑しょうクリニック トップ">
+          <img src="./favicon.svg" width="56" height="56" alt="">
+          <span class="header-brand-name"><small>新宿御苑</small>しょうクリニック</span>
+        </a>
+        <nav class="header-desktop" aria-label="メインメニュー">
+          <ul class="header-links">
+            <li><a href="./clinic.html">クリニック紹介</a></li>
+            <li><a href="./medical.html">診療案内</a></li>
+            <li><a href="./hours.html" aria-current="page">診療時間</a></li>
+            <li><a href="./news.html">お知らせ</a></li>
+          </ul>
+        </nav>
+        <a class="header-phone" href="tel:0333581195" aria-label="電話する 03-3358-1195"><svg class="icon" aria-hidden="true"><use href="./icons.svg#icon-phone"/></svg>03-3358-1195</a>
+      </div>
+      <nav class="header-rail" aria-label="来院のご案内">
+        <a class="header-rail-link" href="./#hours"><svg class="icon" aria-hidden="true"><use href="./icons.svg#icon-clock"/></svg>診療時間</a>
+        <a class="header-rail-link" href="./#access"><svg class="icon" aria-hidden="true"><use href="./icons.svg#icon-pin"/></svg>アクセス</a>
+      </nav>
+      <div class="header-contact">
+        <a class="header-mobile-hours" href="./#hours"><svg class="icon" aria-hidden="true"><use href="./icons.svg#icon-clock"/></svg>診療時間</a>
+      </div>
+      <details class="mobile-menu">
+        <summary><span class="header-menu-lines" aria-hidden="true"></span><span class="header-open">メニュー</span><span class="header-close">閉じる</span></summary>
+        <nav class="header-panel" aria-label="メインメニュー">
+          <ul class="header-links">
+            <li><a href="./clinic.html">クリニック紹介</a></li>
+            <li><a href="./medical.html">診療案内</a></li>
+            <li><a href="./hours.html" aria-current="page">診療時間</a></li>
+            <li><a href="./news.html">お知らせ</a></li>
+          </ul>
+          <a class="header-panel-access" href="./#access"><svg class="icon" aria-hidden="true"><use href="./icons.svg#icon-pin"/></svg>新宿御苑前駅から徒歩3分</a>
+        </nav>
+      </details>
+    </header>
+    <main class="guide-main" id="content">
+      <h1>診療時間</h1>
+      <section class="guide-section">
+        <h2>曜日別の診療時間</h2>
+      <table class="hours-table" aria-label="曜日別の診療時間" aria-describedby="hours-legend thursday-note">
+        <thead><tr><th scope="col">時間</th><th scope="col">月</th><th scope="col">火</th><th scope="col">水</th><th scope="col">木</th><th scope="col">金</th><th scope="col">土</th><th scope="col">日・祝</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">9:00–12:00</th><td>○</td><td>—</td><td>○</td><td>○</td><td>○</td><td>○</td><td>—</td></tr>
+          <tr><th scope="row">14:30–16:30</th><td>○</td><td>—</td><td>○</td><td>△</td><td>○</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p id="hours-legend" class="hours-legend">○ 診療あり　— 診療なし　△ 下記参照</p>
+      <p><strong>休診日</strong>　火曜・日曜・祝日</p>
+      <p id="thursday-note">第2・第4木曜の14:30〜16:30は、公式サイトのお知らせで予約優先と案内されています。時間表では木曜午後が斜線のため、来院日と予約方法はお電話でご確認ください。</p>
+        <a class="guide-link" href="./news.html">年末年始の診療・休診日を見る</a>
+      </section>      <section class="guide-section">
+        <h2>受診について</h2>
+        <p>一般診療は午前・午後ともに受付順です。発熱のある方も一般診療時間内に診療しています。マスクを着用してご来院ください。</p>
+        <a class="guide-call" href="tel:0333581195">電話　03-3358-1195</a>
+      </section>
+      <a class="guide-link guide-home" href="./">トップへ戻る</a>
+    </main>
+  </body>
+</html>

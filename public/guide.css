@@ -1,0 +1,322 @@
+.guide-page { color: #203e35; background: #f8faf6; }
+.guide-link { display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: .25em; }
+.guide-main { max-width: 58rem; margin-inline: auto; padding: clamp(2rem,6vw,5rem) max(5vw,1rem); }
+.guide-main h1 { font-size: clamp(2.2rem,5vw,3.75rem); line-height: 1.3; margin-bottom: 1.5rem; }
+.guide-main h2 { font-size: clamp(1.35rem,3vw,1.9rem); line-height: 1.5; }
+.guide-section { padding-block: clamp(1.6rem,4vw,3rem); border-top: 1px solid #a9bfb1; }
+.guide-section p, .guide-section address { margin-top: .9rem; line-height: 1.9; font-style: normal; }
+.guide-section .guide-date { color: #52675d; font-size: .875rem; margin: .4rem 0 1.2rem; }
+.guide-dates { margin: 1rem 0; }
+.guide-dates div { display: grid; grid-template-columns: 1.7fr 1fr; gap: .65rem; align-items: center; padding: .75rem 1rem; background: #e9f0ea; border-bottom: 1px solid #c7d5cb; }
+.guide-dates dd { margin: 0; font-weight: 700; }
+.guide-section ul { padding-left: 1.4rem; margin-top: .8rem; }
+.guide-section li + li { margin-top: .5rem; }
+.guide-call { display: inline-flex; min-height: 44px; align-items: center; margin-top: .8rem; padding: .4rem 1rem; border-radius: .65rem; background: #245044; color: white; text-decoration: none; }
+.guide-name { font-size: 1.65rem; font-weight: 650; }
+.guide-name small { font-size: .9rem; }
+.guide-home { display: flex; width: fit-content; margin-top: 1rem; }
+@media (max-width: 33rem) {
+  .guide-dates div { padding-inline: .6rem; font-size: .94rem; }
+}
+
+/* Medical departments */
+.medical-page {
+  --medical-paper: #d2dcd9;
+  --medical-ink: #1c3938;
+  --medical-accent: #005d70;
+  --medical-gutter: clamp(1.15rem, 3.5vw, 4.5rem);
+  --ink: var(--medical-ink);
+  background: var(--medical-paper);
+  color: var(--medical-ink);
+}
+.medical-page .site-header { background: var(--medical-paper); }
+.medical-width {
+  width: min(100rem, calc(100% - 2 * var(--medical-gutter)));
+  margin-inline: auto;
+}
+.medical-main {
+  padding-block: clamp(1.8rem, 4vw, 4.8rem) clamp(2rem, 5vw, 5rem);
+}
+.medical-heading { margin-bottom: clamp(1.6rem, 3vw, 3.2rem); }
+.medical-heading h1 {
+  font-size: clamp(2rem, 3.4vw, 3.75rem);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: .025em;
+}
+.medical-heading p { margin-top: .75rem; font-size: clamp(.9375rem, 1.12vw, 1.125rem); }
+.medical-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.1rem, 3.2vw, 4rem);
+  list-style: none;
+  padding: 0;
+}
+.medical-option {
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: .9rem;
+  color: inherit;
+  text-decoration: none;
+}
+.medical-portrait {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: clamp(20rem, 58svh, 39rem);
+  border-radius: 56% 44% 56% 44% / 31% 35% 65% 59%;
+  background: #c6d1cb;
+}
+.medical-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 58% center; }
+.medical-options li:nth-child(2) .medical-portrait { border-radius: 49% 51% 27% 38% / 40% 42% 25% 22%; }
+.medical-options li:nth-child(2) img { object-position: 36% center; }
+.medical-options li:nth-child(3) .medical-portrait { border-radius: 40% 60% 38% 62% / 31% 39% 61% 69%; }
+.medical-options li:nth-child(3) img { object-position: 45% center; }
+.medical-label {
+  position: absolute;
+  top: clamp(2rem, 4vw, 4.25rem);
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(.45rem, 1vw, 1rem);
+  min-height: 3rem;
+  padding: .55rem clamp(.65rem, 1.2vw, 1.25rem);
+  border-radius: 1.25rem .55rem 1.25rem .55rem;
+  background: #f8faf6;
+}
+.medical-label h2 { font-size: clamp(1.05rem, 1.5vw, 1.5rem); line-height: 1.3; }
+.medical-label span { color: var(--medical-accent); }
+.medical-option p { max-width: 25rem; margin: .85rem auto 0; padding-inline: .2rem; font-size: .9375rem; line-height: 1.8; }
+.medical-option:is(:hover, :focus-visible) .medical-label { background: var(--medical-accent); color: white; }
+.medical-option:is(:hover, :focus-visible) .medical-label span { color: inherit; }
+.medical-image-note { display: block; margin-top: 1.7rem; font-size: .75rem; color: #415851; }
+
+.medical-treatments { display: grid; grid-template-areas: "treatments"; }
+.medical-sections, .medical-jump { grid-area: treatments; }
+.medical-sections { min-width: 0; }
+.medical-jump { position: sticky; z-index: 2; top: 1.5rem; align-self: start; justify-self: start; }
+.medical-jump nav {
+  display: grid;
+  width: max-content;
+  padding: .45rem;
+  margin-inline-start: var(--medical-gutter);
+  border-radius: 1.2rem;
+  background: #f7faf8f5;
+  box-shadow: 0 2px 16px #203e3512;
+}
+.medical-jump a {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  min-height: 44px;
+  padding-inline: .65rem;
+  border-radius: .8rem;
+  font-size: .85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.medical-jump a::before { content: ""; width: .35rem; height: .35rem; border-radius: 50%; background: #007d91; }
+.medical-jump a:hover, .medical-jump a[aria-current] { color: var(--medical-accent); background: #dbedf0; }
+.medical-treatment { --medical-mark: #11abc7; }
+.medical-treatment:focus-visible { outline-offset: -3px; }
+.medical-treatment:nth-of-type(even) { background: #dde5e2; }
+.medical-treatment#dermatology { --medical-mark: #229baf; }
+.medical-treatment#allergy { --medical-mark: #149db6; }
+.medical-banner {
+  position: relative;
+  overflow: clip;
+  height: clamp(17rem, 43svh, 32rem);
+  background: #b9c9c5;
+}
+.medical-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+#dermatology .medical-banner img { object-position: center 47%; }
+#allergy .medical-banner img { object-position: center 46%; }
+.medical-banner figcaption {
+  position: absolute;
+  bottom: .8rem;
+  right: var(--medical-gutter);
+  border-radius: .3rem;
+  padding: .15rem .45rem;
+  background: #f7faf8f5;
+  color: var(--medical-ink);
+  font-size: .7rem;
+}
+.medical-panel {
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) minmax(0, 3.2fr);
+  align-items: start;
+  column-gap: clamp(1.75rem, 4vw, 5rem);
+  padding: clamp(2.25rem, 4vw, 4.5rem) 0 clamp(3.5rem, 8vw, 8rem);
+}
+.medical-emblem {
+  z-index: 1;
+  justify-self: end;
+  width: clamp(6rem, 10vw, 11rem);
+  aspect-ratio: 3 / 4;
+  margin-top: clamp(-9rem, -7vw, -5rem);
+  border-radius: 56% 44% 56% 44% / 31% 35% 65% 59%;
+  background: var(--medical-mark);
+  pointer-events: none;
+}
+#dermatology .medical-emblem { border-radius: 49% 51% 27% 38% / 40% 42% 25% 22%; }
+#allergy .medical-emblem { border-radius: 40% 60% 38% 62% / 31% 39% 61% 69%; }
+.medical-copy h2 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .15em;
+  font-size: clamp(2.25rem, 4.25vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+.medical-copy h2 span { font-size: .45em; }
+.medical-lead { margin-top: .85rem; font-size: clamp(1rem, 1.4vw, 1.2rem); font-weight: 700; }
+.medical-symptoms, .medical-topic { margin-top: clamp(1.8rem, 3.5vw, 3.5rem); }
+.medical-copy h3 { display: flex; align-items: center; gap: .65rem; margin: 0; font-size: clamp(1.15rem, 2vw, 1.55rem); }
+.medical-copy h3::before { content: ""; flex: none; width: .45rem; height: .45rem; border-radius: 50%; background: #007d91; }
+.medical-copy h4 { margin: 1.2rem 0 .3rem; font-size: 1rem; }
+.medical-symptoms > p { margin: .6rem 0 1rem; }
+.medical-symptoms ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .5rem;
+  padding: 0;
+  list-style: none;
+}
+.medical-symptoms li { display: grid; place-items: center; min-height: 3.3rem; padding: .6rem; border-radius: .9rem; background: #f9fbfac9; font-size: .95rem; font-weight: 700; text-align: center; }
+.medical-topic { border-top: 1px solid #a8bfba; padding-top: 1.35rem; }
+.medical-topic p { max-width: 55rem; line-height: 1.85; }
+.medical-page .visit { margin-top: clamp(2rem, 5vw, 5rem); }
+.medical-page .visit, .clinic-visit .visit {
+  --cyan: #9cdbe3;
+  --deep-blue: #005d70;
+}
+:is(.medical-page, .clinic-visit) .visit-hours .hours-table :is(th, td) { border-color: #5b969c; }
+.medical-footer { display: flex; flex-wrap: wrap; gap: 1.2rem; padding-block: 1.1rem; }
+@media (hover: hover) and (pointer: fine) {
+  .medical-portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #14acd0;
+    mix-blend-mode: multiply;
+    opacity: .72;
+    pointer-events: none;
+  }
+  .medical-options:not(:has(.medical-option:is(:hover, :focus-visible))) li:first-child .medical-portrait::after,
+  .medical-option:is(:hover, :focus-visible) .medical-portrait::after { opacity: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.medical-page) { scroll-behavior: smooth; }
+  .medical-portrait::after, .medical-label { transition: opacity .24s ease, background-color .24s ease, color .24s ease; }
+  @supports (animation-timeline: view()) {
+    .medical-banner { view-timeline-name: --medical-banner; }
+    .medical-banner img {
+      animation: medical-photo linear both;
+      animation-timeline: --medical-banner;
+      animation-range: cover;
+    }
+    .medical-emblem, .medical-copy > h2 {
+      animation: medical-arrive ease-out both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 95%;
+    }
+    @keyframes medical-photo {
+      from { transform: translateY(-4%) scale(1.12); }
+      to { transform: translateY(4%) scale(1.12); }
+    }
+    @keyframes medical-arrive {
+      from { opacity: .65; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+}
+@media (min-width: 64.01rem) {
+  .medical-width { margin-inline: auto max(6.25rem, calc((100% - 100rem) / 2)); width: min(100rem, calc(100% - var(--medical-gutter) - 6.25rem)); }
+  .medical-banner figcaption { right: 6.25rem; }
+}
+@media (max-width: 64rem) {
+  .medical-treatments { display: block; }
+  .medical-jump { top: 4.3rem; }
+  .medical-jump nav { grid-auto-flow: column; gap: .2rem; width: auto; margin: 0; padding: .15rem var(--medical-gutter); border-radius: 0; }
+  .medical-jump a { padding-inline: .5rem; }
+  .medical-treatment { scroll-margin-top: 7.4rem; }
+}
+@media (max-width: 47rem) {
+  .medical-options { grid-template-columns: 1fr; gap: 2rem; }
+  .medical-portrait { height: clamp(15rem, 76vw, 26rem); }
+  .medical-option p { margin-inline: 0; }
+  .medical-banner { height: clamp(12rem, 42vw, 19rem); }
+  .medical-panel { display: block; position: relative; padding-top: 2.9rem; }
+  .medical-emblem { position: absolute; top: -3rem; left: 0; width: 3.7rem; margin: 0; }
+  .medical-symptoms ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Clinic introduction */
+.clinic-page {
+  --clinic-paper: #d3dcdf;
+  --clinic-ink: #253942;
+  --clinic-accent: #007899;
+  background: var(--clinic-paper);
+  color: var(--clinic-ink);
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+.clinic-layout {
+  display: grid;
+  grid-template-columns: minmax(10rem, .36fr) minmax(0, 1.64fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 6rem);
+  max-width: 112rem;
+  margin: auto;
+  padding: clamp(3rem, 6.5vw, 7rem) clamp(1.25rem, 4.5vw, 6rem);
+}
+.clinic-index { position: sticky; top: 2rem; }
+.clinic-index h1 { margin-bottom: 1rem; font-size: 1.125rem; }
+.clinic-index nav { display: grid; justify-items: start; }
+.clinic-index a { display: flex; gap: .7rem; align-items: center; min-height: 44px; font-size: .9375rem; text-underline-offset: .25em; }
+.clinic-index a::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--clinic-accent); }
+.director, .director-career, .clinic-facilities, .clinic-visit { scroll-margin-top: 4.5rem; }
+.clinic-content h2 { margin: 0 0 clamp(1.8rem, 3vw, 3.5rem); font-size: clamp(1.75rem, 2.55vw, 2.25rem); line-height: 1.2; font-weight: 700; letter-spacing: .05em; }
+.director-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-areas: "letter portrait" "career portrait";
+  gap: clamp(2rem, 4vw, 4.5rem);
+}
+.director-letter { grid-area: letter; font-size: clamp(1rem, 1.3vw, 1.125rem); line-height: 2; letter-spacing: .025em; }
+.director-letter p + p { margin-top: 1.35em; }
+.director-portrait { grid-area: portrait; align-self: start; position: sticky; top: 5rem; text-align: center; }
+.director-portrait img { width: min(100%, 23rem); height: auto; margin: 0 auto; border-top-right-radius: clamp(2rem, 4vw, 4rem); }
+.director-portrait figcaption { margin-top: .85rem; font-size: .8125rem; line-height: 1.8; }
+.director-portrait strong { display: block; margin-top: .25rem; font-size: 1.25rem; line-height: 1.6; letter-spacing: .05em; }
+.director-portrait span { display: block; font-size: .75rem; }
+.director-career { grid-area: career; }
+.director-career h3 { display: flex; align-items: center; gap: .6rem; font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.3; margin: 0; }
+.director-career h3::before { content: ""; width: .48rem; height: .48rem; border-radius: 50%; background: var(--clinic-accent); }
+.director-career dl { margin: 1.25rem 0 .75rem; }
+.director-career dl div { display: grid; grid-template-columns: auto 1fr; gap: 1.2rem; padding: .8rem 0; border-top: 1px solid #acbec4; }
+.director-career dt { font-weight: 700; font-variant-numeric: tabular-nums; }
+.director-career dd { margin: 0; }
+.director-career .guide-link { margin-right: 1.25rem; }
+.clinic-facilities, .clinic-visit { margin-top: clamp(3rem, 6vw, 6rem); border-color: #a8b9bf; }
+.clinic-facilities h2, .clinic-visit h2 { margin-bottom: 1rem; }
+.clinic-visit .visit h3 { margin: 0; font-size: clamp(1.5rem, 2.3vw, 2rem); line-height: 1.25; }
+.clinic-facilities .facility-note { margin: 0 0 1.25rem; font-size: .875rem; }
+.facility-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
+.facility-gallery img { width: 100%; height: auto; border-radius: .5rem 1.5rem .5rem .5rem; }
+.facility-gallery figcaption { margin-top: .55rem; font-weight: 700; }
+@media (max-width: 62rem) {
+  .clinic-layout { display: block; }
+  .clinic-index { position: static; margin-bottom: 2rem; }
+  .clinic-index h1 { margin-bottom: .2rem; }
+  .clinic-index nav { display: flex; flex-wrap: wrap; gap: 0 1.3rem; }
+}
+@media (max-width: 43rem) {
+  .clinic-layout { padding-block: 2rem; }
+  .director-layout { grid-template-columns: 1fr; grid-template-areas: "portrait" "letter" "career"; gap: 1.75rem; }
+  .director-portrait { position: static; }
+  .director-portrait img { width: min(100%, 13.875rem); }
+  .facility-gallery { grid-template-columns: 1fr; gap: 1.5rem; }
+}

@@ -1,0 +1,52 @@
+.detail-page { --detail-side: clamp(1.25rem,6vw,6rem); --detail-bar: 5rem; color: #203e35; background: #fafbf7; }
+.detail-page a { text-underline-offset: .25em; }
+.detail-bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: clamp(.5rem, 2vw, 2rem); padding: .65rem var(--detail-side); min-height: var(--detail-bar); background: #f4f6f1f5; border-bottom: 1px solid #c3cfc6; }
+.detail-bar a { display: grid; min-height: 44px; align-items: center; padding-inline: .3rem; font-size: .94rem; text-decoration: none; }
+.detail-bar a[aria-current] { font-weight: 750; box-shadow: inset 0 -2px #387461; }
+.detail-bar a:hover { text-decoration: underline; }
+.detail-page section { scroll-margin-top: var(--detail-bar); }
+.detail-cover { min-height: calc(100svh - var(--detail-bar)); display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 5vw; padding: 3rem var(--detail-side); background: #cad2ce; }
+.detail-cover figure { position: relative; }
+.detail-cover figure img { width: 100%; height: clamp(21rem,65svh,48rem); object-fit: cover; border-radius: 40% 12% 27% 7% / 35% 9% 21% 8%; }
+.detail-cover figcaption { margin-top: .4rem; font-size: .75rem; }
+.detail-cover-copy { max-width: 34rem; }
+.detail-cover-copy > a:first-child { font-size: .9rem; }
+.detail-cover h1 { font-size: clamp(2.5rem,5vw,5rem); letter-spacing: .035em; line-height: 1.28; margin-block: .6rem 1rem; }
+.detail-cover p { font-size: clamp(1.05rem,1.6vw,1.4rem); }
+.detail-read, .detail-notices, .detail-return { display: inline-flex; align-items: center; min-height: 44px; }
+.detail-read { margin-top: 1.5rem; }
+.detail-panel { display: grid; align-content: center; min-height: 88svh; padding: clamp(4rem,9vw,9rem) var(--detail-side); }
+.detail-inner { width: min(100%,71rem); margin: auto; display: grid; align-items: start; grid-template-columns: minmax(0,.78fr) minmax(0,1.22fr); gap: clamp(2rem,7vw,8rem); }
+.detail-inner h2 { font-size: clamp(1.85rem,3.4vw,3.4rem); line-height: 1.4; text-wrap: balance; }
+.detail-inner p, .detail-inner address { line-height: 1.95; font-size: clamp(1rem,1.3vw,1.16rem); }
+.detail-examples { list-style: none; margin-top: 1.5rem; padding: 0; }
+.detail-examples li { border-top: 1px solid #b6c7bc; padding: .9rem 0; font-weight: 600; }
+.detail-topic { background: #295548; color: #fff; }
+.detail-prose h3 { font-size: 1.35rem; margin: 0 0 .55rem; }
+.detail-prose p + h3 { margin-top: 2.5rem; }
+.detail-prose a { display: inline-block; margin-top: 1.3rem; padding-block: .7rem; }
+.detail-hours { background: #e3ece3; }
+.detail-hours .hours-table { margin: 0 0 1rem; background: #fbfcf9; }
+.detail-hours p + p { margin-top: .75rem; }
+.detail-hours .hours-legend { font-size: .85rem; }
+.detail-action { display: inline-flex; align-items: center; padding: .8rem 1.1rem; margin: 1.25rem 1rem 0 0; color: white; background: #245044; text-decoration: none; border-radius: .75rem; }
+.detail-access address { font-style: normal; }
+.detail-access .dialog-link { padding-block: .6rem; }
+.detail-return { display: flex; width: fit-content; margin-top: 2rem; }
+@media (max-width: 44rem) {
+  .detail-page { --detail-bar: 4.5rem; }
+  .detail-bar { top: 4rem; gap: .8rem; padding-block: .4rem; }
+  .detail-page section { scroll-margin-top: calc(4rem + var(--detail-bar)); }
+  .detail-bar a { font-size: .9rem; }
+  .detail-cover { display: flex; flex-direction: column-reverse; align-items: stretch; justify-content: center; gap: 1.5rem; padding-block: 2rem; }
+  .detail-cover figure img { height: clamp(14rem,38svh,27rem); }
+  .detail-cover h1 { margin-block: .35rem .6rem; }
+  .detail-read { margin-top: .4rem; }
+  .detail-inner { grid-template-columns: 1fr; gap: 1.6rem; }
+  .detail-panel { min-height: 86svh; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.detail-page) { scroll-behavior: smooth; }
+  .detail-inner.detail-entered { animation: detail-arrive 450ms ease-out; }
+  @keyframes detail-arrive { from { opacity: .55; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+}
